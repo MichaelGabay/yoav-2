@@ -30,6 +30,24 @@ This is an Express.js application. 🚀
 ### Running the docker container for mongoDB and running the app
 
 ```sh
-docker-compose -d up
+docker-compose up -d
 npm run dev
 ```
+
+## 📊 Viewing Database Data
+
+After starting the Docker containers, you can view your MongoDB data in the browser using **mongo-express**:
+
+1. **Access mongo-express:**
+
+   - Open your browser and navigate to: `http://localhost:8081`
+
+2. **Login credentials:**
+
+   - Username: `admin`
+   - Password: `admin`
+
+3. **Browse your data:**
+   - Select the `test` database from the left sidebar
+   - Click on collections to view documents
+   - You can query, edit, and manage your data through the web interface
