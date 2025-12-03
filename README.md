@@ -27,8 +27,9 @@ This is an Express.js application. 🚀
     MONGODB_URI=mongodb://admin:password123@localhost:27018
     ```
 
-### Running the app
+### Running the docker container for mongoDB and running the app
 
 ```sh
+docker-compose -d up
 npm run dev
 ```
