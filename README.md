@@ -24,7 +24,7 @@ This is an Express.js application. 🚀
 3.  Create a `.env` file in the root directory with the following content:
     ```
     PORT=3000
-    MONGODB_URI=mongodb://admin:password123@localhost:27018
+    MONGODB_URI="mongodb://admin:password123@localhost:27018/yoav?authSource=admin"
     ```
 
 ### Running the docker container for mongoDB and running the app
