@@ -10,6 +10,7 @@ This is an Express.js application. 🚀
 
 - Node.js
 - npm
+- Docker and Docker Compose
 
 ### Installation
 
@@ -27,12 +28,19 @@ This is an Express.js application. 🚀
     MONGODB_URI="mongodb://admin:password123@localhost:27018/yoav?authSource=admin"
     ```
 
-### Running the docker container for mongoDB and running the app
+### Running the Application
 
+Simply run:
 ```sh
-docker-compose up -d
 npm run dev
 ```
+
+This command will:
+1. Start the Docker containers (MongoDB and mongo-express) in detached mode
+2. Wait a few seconds for the containers to initialize
+3. Start the Express server with nodemon (auto-reload on file changes)
+
+The server will be running on `http://localhost:3000` (or the port specified in your `.env` file).
 
 ## 📊 Viewing Database Data
 

@@ -1,13 +1,7 @@
 import express from "express"
 import dotenv from "dotenv"
-import { fileURLToPath } from "url"
-import { dirname, join } from "path"
 import router from "./routes/mainRoutes.js"
 import dbConnection from "./db/dbConnection.js"
-
-// Get __dirname equivalent for ES modules
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
 
 // על מנת שאוכל לגשת למשתני סביבה
 dotenv.config()
