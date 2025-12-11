@@ -14,3 +14,14 @@ Content-Type: application/json
     "phone": "1234567890",
     "address": "123 Main St, Anytown, USA"
 }
+### login
+post {{userUrl}}/login
+Content-Type: application/json
+
+{
+    "email": "john.doe@example.com",
+    "password": "password123"  
+}
+
+
+
