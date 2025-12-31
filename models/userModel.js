@@ -9,6 +9,10 @@ const userSchema = new mongoose.Schema({
   password: String,
   phone: String,
   address: String,
+  role: {
+    type: String,
+    default: "user",
+  },
 })
 
 export default mongoose.model("User", userSchema)

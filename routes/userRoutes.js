@@ -1,6 +1,8 @@
 import express from "express"
 import userModel from "../models/userModel.js"
 import bcrypt from "bcrypt"
+import jwt from "jsonwebtoken"
+import authUser from "../middlewares/auth.js"
 const router = express.Router()
 
 router.post("/signup", async (req, res) => {
@@ -24,14 +26,21 @@ router.post("/login", async (req, res) => {
     if (!user) return res.status(401).send("invalid credentails")
     let isOk = await bcrypt.compare(req.body.password, user.password)
     if (!isOk) return res.status(401).send("invalid credentails")
-    // generata token
-
-    res
-      .status(200)
-      .json({ message: "login successful- next step to generate token" })
+    const token = jwt.sign(
+      { _id: user._id, role: user.role },
+      process.env.SECRET_KEY,
+      { expiresIn: "30d" }
+    )
+    res.status(200).json({ message: "login successful", token })
   } catch (error) {
     res.status(401).json(error)
   }
+})
+
+router.use("/checkUserLogged", authUser, (req, res) => {
+  return res
+    .status(200)
+    .send(`the token is correct (user ${req.user._id} logged in)`)
 })
 
 // routes
