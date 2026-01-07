@@ -10,5 +10,9 @@ const authUser = (req, res, next) => {
     return res.status(500).json(error)
   }
 }
-
+const authAdmin = (req, res, next) => {
+  if (req.user.role !== "admin")
+    return res.status(401).json({ message: "Unauthorized" })
+  next()
+}
 export default authUser

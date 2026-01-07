@@ -1,8 +1,6 @@
 @baseUrl = http://localhost:3000/api
 @userUrl = {{baseUrl}}/user
 @token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTNhZjU2ZDU3ZWVmMzRlZjU2OTJmZjIiLCJyb2xlIjoidXNlciIsImlhdCI6MTc2NzIwMTUxMSwiZXhwIjoxNzY5NzkzNTExfQ.RFHjBDRzxotTDmCKHs8sVV2D8PR8psVTuLGY2YpAIfo
-### check server
-get {{baseUrl}}
 
 ### signup
 post {{userUrl}}/signup
@@ -23,8 +21,8 @@ Content-Type: application/json
     "email": "john.doe@example.com",
     "password": "password123"  
 }
-### check user token
-post {{userUrl}}/checkUserLogged
+### get user info
+get {{userUrl}}
 Content-Type: application/json
 Authorization: {{token}}
 
