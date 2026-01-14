@@ -1,10 +1,7 @@
+// על מנת שאוכל לגשת למשתני סביבה
 import express from "express"
-import dotenv from "dotenv"
 import router from "./routes/mainRoutes.js"
 import dbConnection from "./db/dbConnection.js"
-
-// על מנת שאוכל לגשת למשתני סביבה
-dotenv.config()
 // יצירת אינסטנס חדש עבור השרת
 const app = express()
 

@@ -1,7 +1,6 @@
 import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3"
 import { v4 as uuidv4 } from "uuid"
 
-// יצירת לקוח S3 עם האימות
 const s3Client = new S3Client({
   region: process.env.AWS_REGION,
   credentials: {
@@ -10,13 +9,6 @@ const s3Client = new S3Client({
   },
 })
 
-/**
- * העלאת קובץ ל-S3
- * @param {Buffer} fileBuffer - תוכן הקובץ כ-Buffer
- * @param {string} originalName - השם המקורי של הקובץ
- * @param {string} mimeType - סוג הקובץ (MIME type)
- * @returns {Promise<{s3Key: string, s3Url: string}>} - מפתח ו-URL של הקובץ ב-S3
- */
 export const uploadFileToS3 = async (fileBuffer, originalName, mimeType) => {
   try {
     // יצירת שם ייחודי לקובץ
@@ -33,7 +25,7 @@ export const uploadFileToS3 = async (fileBuffer, originalName, mimeType) => {
       Body: fileBuffer,
       ContentType: mimeType,
       // אם אתה רוצה שהקבצים יהיו נגישים לציבור
-      // ACL: "public-read",
+      ACL: "public-read",
     })
 
     // ביצוע ההעלאה
