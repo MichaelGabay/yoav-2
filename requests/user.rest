@@ -7,11 +7,11 @@ post {{userUrl}}/signup
 Content-Type: application/json
 
 {
-    "name": "John Doe",
-    "email": "john.doe@example.com",
-    "password": "password123",
+    "name": "n",
+    "email": "dubi.aa@doeexample.com",
+    "password": "ghMd123144",
     "phone": "1234567890",
-    "address": "123 Main St, Anytown, USA"
+    "address": "123 Main St, Anytown, USA",
 }
 ### login
 post {{userUrl}}/login

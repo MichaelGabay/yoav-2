@@ -11,7 +11,6 @@ const userCtrl = {
       user.password = "***********"
       res.status(201).json({ message: "User created successfully", user })
     } catch (err) {
-      console.log(err)
       res
         .status(err.code == 11000 ? 409 : 500)
         .json({ message: "Internal server error", err })
