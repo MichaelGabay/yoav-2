@@ -1,0 +1,34 @@
+@baseUrl = http://localhost:3000/api
+@postUrl = {{baseUrl}}/post
+@token =eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTgzNzM3MGY3N2QwYTE5ZmFlYThhMjgiLCJyb2xlIjoidXNlciIsImlhdCI6MTc3MDIyMjQ2MiwiZXhwIjoxNzcyODE0NDYyfQ.yneQnRsScOx_5v-SXdBd7HqQcZ7e3w9t3YglEaHpld8
+
+### create post
+post {{postUrl}}
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "title": "test post",
+    "content": "test content",
+    "image":"https://server-uploads-node-yoav.s3.us-east-1.amazonaws.com/uploads/a0ced444-a1eb-4dd3-98fc-ceda630924ae.svg"
+}
+### delete post
+delete {{postUrl}}?id=698381f2014537585ddde6ea
+Authorization: {{token}}
+
+### get single post post
+get {{postUrl}}/getSingle?id=6983759d87eb7090c3446d8a
+
+### update post
+put {{postUrl}}/update?id=6983759d87eb7090c3446d8a
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "title": "test post",
+    "content": "updated content",
+    "image":"https://server-uploads-node-yoav.s3.us-east-1.amazonaws.com/uploads/a0ced444-a1eb-4dd3-98fc-ceda630924ae.svg"
+}
+### like post
+post {{postUrl}}/like?id=6983759d87eb7090c3446d8a
+Authorization: {{token}}

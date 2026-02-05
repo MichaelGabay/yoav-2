@@ -35,7 +35,6 @@ export const uploadFileToS3 = async (fileBuffer, originalName, mimeType) => {
     const s3Url = `https://${process.env.AWS_S3_BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${s3Key}`
 
     return {
-      s3Key,
       s3Url,
     }
   } catch (error) {
