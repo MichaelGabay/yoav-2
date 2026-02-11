@@ -8,7 +8,7 @@ Content-Type: application/json
 Authorization: {{token}}
 
 {
-    "title": "test post",
+    "title": "test 21",
     "content": "test content",
     "image":"https://server-uploads-node-yoav.s3.us-east-1.amazonaws.com/uploads/a0ced444-a1eb-4dd3-98fc-ceda630924ae.svg"
 }
@@ -32,3 +32,13 @@ Authorization: {{token}}
 ### like post
 post {{postUrl}}/like?id=6983759d87eb7090c3446d8a
 Authorization: {{token}}
+
+### unlike post
+post {{postUrl}}/unlike?id=6983759d87eb7090c3446d8a
+Authorization: {{token}}
+
+### get user posts post
+get http://localhost:3000/api/post/getUserPosts
+Authorization: {{token}}
+### get posts post
+get http://localhost:3000/api/post/getMany
